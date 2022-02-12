@@ -1,0 +1,3 @@
+sad 220 260
+danceLeft 220 260
+danceRight 220 260

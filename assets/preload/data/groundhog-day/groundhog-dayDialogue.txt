@@ -1,0 +1,5 @@
+Happy:bf:Beep.
+Shocked:dad:Oh, hey, guys! I'm surprised to see you two back in NYC so soon.
+Neutral:bf:Beep boop bop.
+Neutral:gf:[Happy]
+Neutral:dad:You want to battle again? Sure thing!

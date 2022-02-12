@@ -1,0 +1,10 @@
+Concrete-Jungle:ace:1
+Noreaster:ace:1
+Sub-Zero:ace:1
+Frostbite:ace-frost:1
+Groundhog-Day:ace:2
+Cold-Front:ace:2
+Cryogenic:ace:2
+North:ace:2
+Cold-Hearted:sakuroma:3
+Ectospasm:retro:3

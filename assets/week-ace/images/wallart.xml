@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="wallart.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="vibe0000" x="11" y="11" width="4177" height="2557"/>
+	<SubTexture name="vibe0001" x="11" y="11" width="4177" height="2557"/>
+	<SubTexture name="vibe0002" x="11" y="2580" width="4177" height="2557"/>
+	<SubTexture name="vibe0003" x="11" y="2580" width="4177" height="2557"/>
+	<SubTexture name="vibe0004" x="11" y="5149" width="4177" height="2557"/>
+	<SubTexture name="vibe0005" x="11" y="5149" width="4177" height="2557"/>
+	<SubTexture name="vibe0006" x="11" y="5149" width="4177" height="2557"/>
+	<SubTexture name="vibe0007" x="11" y="5149" width="4177" height="2557"/>
+	<SubTexture name="vibe0008" x="11" y="5149" width="4177" height="2557"/>
+	<SubTexture name="vibe0009" x="11" y="5149" width="4177" height="2557"/>
+	<SubTexture name="vibe0010" x="11" y="5149" width="4177" height="2557"/>
+	<SubTexture name="vibe0011" x="11" y="5149" width="4177" height="2557"/>
+	<SubTexture name="vibe0012" x="11" y="5149" width="4177" height="2557"/>
+	<SubTexture name="vibe0013" x="11" y="5149" width="4177" height="2557"/>
+	<SubTexture name="vibe0014" x="11" y="5149" width="4177" height="2557"/>
+</TextureAtlas>

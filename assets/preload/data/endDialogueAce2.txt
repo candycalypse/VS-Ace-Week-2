@@ -1,0 +1,4 @@
+Happy:ace:Hey cool song.
+Embarassed:dad:Thanks, I wasnt sure how I felt about it at first.
+Sad:ace: It was fine, but man that was a fast song. I think I need to sit down.
+Neutral:dad:Same.
