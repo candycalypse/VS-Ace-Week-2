@@ -2037,6 +2037,10 @@ class PlayState extends MusicBeatState
 					if (Math.abs(unspawnNotes[j].strumTime - targetNote.strumTime) < 0.25 && unspawnNotes[j].mustPress)
 						validArray.remove(unspawnNotes[j].noteData);
 				}
+                
+                // All four notes are being used. Skip this instance
+				if (validArray.length == 0)
+					continue;
 
 				// Add in the ice note
 				var newNote = new Note(targetNote.strumTime, validArray[FlxG.random.int(0, validArray.length - 1)], null, false, false, true);
