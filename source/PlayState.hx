@@ -941,7 +941,7 @@ class PlayState extends MusicBeatState
 		
 		if (SONG.song == 'Ectospasm')
 			{
-				Cameos.alpha = 0;
+				remove(Cameos);
 			}
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
@@ -1105,7 +1105,7 @@ class PlayState extends MusicBeatState
 		laneunderlayOpponent = new FlxSprite(0, 0).makeGraphic(500, FlxG.height * 2);
 		laneunderlayOpponent.x += 85;
 		laneunderlayOpponent.x += ((FlxG.width / 2) * 0);
-		laneunderlayOpponent.alpha = 1 - FlxG.save.data.laneTransparency;
+		laneunderlayOpponent.alpha = 0.4 - FlxG.save.data.laneTransparency;
 		laneunderlayOpponent.color = FlxColor.BLACK;
 		laneunderlayOpponent.scrollFactor.set();
 		laneunderlayOpponent.screenCenter(Y);
@@ -1113,7 +1113,7 @@ class PlayState extends MusicBeatState
 		laneunderlay = new FlxSprite(0, 0).makeGraphic(500, FlxG.height * 2);
 		laneunderlay.x += 85;
 		laneunderlay.x += ((FlxG.width / 2) * 1);
-		laneunderlay.alpha = 1 - FlxG.save.data.laneTransparency;
+		laneunderlay.alpha = 0.4 - FlxG.save.data.laneTransparency;
 		laneunderlay.color = FlxColor.BLACK;
 		laneunderlay.scrollFactor.set();
 		laneunderlay.screenCenter(Y);
@@ -4687,7 +4687,8 @@ class PlayState extends MusicBeatState
 	
 							case 63:
 								{
-									FlxG.camera.flash(FlxColor.WHITE, 0.5);
+									if (FlxG.save.data.flashing)
+										FlxG.camera.flash(FlxColor.WHITE, 0.5);
 
 									new FlxTimer().start(0.2, function(tmr:FlxTimer)
 										{
@@ -5269,7 +5270,8 @@ class PlayState extends MusicBeatState
 
 						case 128:
 							{
-								FlxG.camera.flash(FlxColor.WHITE, 1);
+								if (FlxG.save.data.flashing)
+									FlxG.camera.flash(FlxColor.WHITE, 1);
 								walkinRight = false; trace('not walkin');
 								bgcold.alpha = 1;
 								bridgecold.alpha = 1;
@@ -5457,7 +5459,9 @@ class PlayState extends MusicBeatState
 
 						case 144:
 							{
-								FlxTween.tween(FlxG.camera, {zoom: 0.90}, 2);
+								if (FlxG.save.data.camzoom)
+									FlxTween.tween(FlxG.camera, {zoom: 0.90}, 2);
+
 								new FlxTimer().start(0.2, function(tmr:FlxTimer)
 									{
 										if (!paused)
@@ -5507,7 +5511,8 @@ class PlayState extends MusicBeatState
 							{
 							case 640 | 704 | 768 | 1152 | 1280 | 1408:
 								{
-									FlxG.camera.zoom += 0.30;
+									if (FlxG.save.data.camzoom)
+										FlxG.camera.zoom += 0.30;
 								}
 							}
 						}
