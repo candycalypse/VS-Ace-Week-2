@@ -1,6 +1,6 @@
-Neutral:bf:Beep!
-Happy:dad:Huh? Oh, hey there! I'm Ace, what's up?
-Neutral:gf:[Happy]
-Neutral:dad:Manhattan? There's a bus that will take you there, but the next one doesn't arrive for a few minutes.
-Neutral:bf:Beep boop?
-Happy:dad:You want to battle in the meantime? Sure!
+Confused:retro:Why are we singing under this shady-ass bridge?
+Eyeroll:dad:Because you complain about the heat. A LOT.
+Happy:retro:You're right. You have no idea how hot it gets down there in Hell!
+Annoyed:dad:Yes I do. I've visited you there a few times. You complain about it everytime. 
+Smug:retro:Hey man. That's edgier tall me, I'm just tryna vibe.
+Happy:dad:Oh, you want good vibes? Check out this song I made!

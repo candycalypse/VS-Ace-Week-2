@@ -1295,8 +1295,18 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'sub-zero':
 					schoolIntro(doof);
-				case 'groundhog-day':
-					schoolIntro(doof);
+					case 'groundhog-day': //intro animation
+                    {
+                        var introanim = new FlxSound().loadEmbedded(Paths.sound("aceanim"));
+                        introanim.play(true);
+                        dad.playAnim('intro', true);
+                        new FlxTimer().start(2.5, function(tmr:FlxTimer)
+                            {
+                                schoolIntro(doof);
+                            });
+    
+                        
+                    }
 				case 'cold-front':
 					schoolIntro(doof);
 				case 'cryogenic':
