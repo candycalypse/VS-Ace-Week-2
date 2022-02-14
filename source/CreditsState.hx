@@ -124,7 +124,8 @@ class CreditsState extends MusicBeatState
 			// Special Thanks
 			['RetroSpecter', '@RetroSpecter_', 'retro', FlxColor.fromRGB(23, 216, 228), 'https://twitter.com/Retrospecter_', []],
 			['Kade', '@KadeDev', 'kade', FlxColor.fromRGB(25, 77, 0), 'https://twitter.com/KadeDeveloper', []],
-            ['TKTems', '@TKtems', 'tk', FlxColor.fromRGB(0, 230, 191), 'https://twitter.com/TKTems', []]
+            ['TKTems', '@TKtems', 'tk', FlxColor.fromRGB(0, 230, 191), 'https://twitter.com/TKTems', []],
+			['TiredPinkPanda', '@TiredPinkPanda', 'panda', FlxColor.fromRGB(158, 22, 22), 'https://twitter.com/TiredPinkPanda', []]
 		]
 	];
 
@@ -335,12 +336,7 @@ class CreditsState extends MusicBeatState
 		creditSections.members[2].members[2].nodes[1] = credit2Sections.members[2].members[2];	// Down	| Kazo -> DJ
 		credit2Sections.members[2].members[2].nodes[1] = creditSections.members[2].members[2];	// Down	| DJ -> Kazo
     
-		/*credit2Sections.members[2].members[0].nodes[4] = creditSections.members[2].members[0];
-		creditSections.members[2].members[1].nodes[4] = credit2Sections.members[2].members[2];
-		creditSections.members[2].members[2].nodes[4] = credit2Sections.members[2].members[2];
-		creditSections.members[2].members[3].nodes[4] = credit2Sections.members[2].members[3];
-		creditSections.members[2].members[4].nodes[4] = credit2Sections.members[2].members[4];
-		credit2Sections.members[2].members[2].nodes[4] = creditSections.members[2].members[1];*/
+		
 
 		credit2Sections.add(new FlxTypedGroup<CreditGroup>());
 
