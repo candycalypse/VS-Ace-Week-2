@@ -4375,6 +4375,8 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		if (!PlayStateChangeables.Optimize)
+		{
 		if (SONG.song == 'Cryogenic' && curBeat == 144)
 			{
 				FlxTween.tween(bgDarken, {alpha: 0.5}, 1.5);
@@ -4386,6 +4388,8 @@ class PlayState extends MusicBeatState
 				FlxTween.tween(bgDarken, {alpha: 0}, 1);
 
 			}	
+		}
+		
 		// yes this updates every step.
 		// yes this is bad
 		// but i'm doing it to update misses and accuracy
