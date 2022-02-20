@@ -3073,6 +3073,11 @@ class PlayState extends MusicBeatState
 					daNote.x = playerStrums.members[Math.floor(Math.abs(daNote.noteData))].x;
 					if (!daNote.isSustainNote)
 						daNote.modAngle = playerStrums.members[Math.floor(Math.abs(daNote.noteData))].modAngle;
+					if (daNote.sustainActive)
+					{
+						if (executeModchart)
+							daNote.alpha = playerStrums.members[Math.floor(Math.abs(daNote.noteData))].alpha;
+					}
 					daNote.modAngle = playerStrums.members[Math.floor(Math.abs(daNote.noteData))].modAngle;
 				}
 				else if (!daNote.wasGoodHit && !daNote.modifiedByLua)
@@ -3081,6 +3086,11 @@ class PlayState extends MusicBeatState
 					daNote.x = strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].x;
 					if (!daNote.isSustainNote)
 						daNote.modAngle = strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].modAngle;
+					if (daNote.sustainActive)
+					{
+						if (executeModchart)
+							daNote.alpha = strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].alpha;
+					}
 					daNote.modAngle = strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].modAngle;
 				}
 
