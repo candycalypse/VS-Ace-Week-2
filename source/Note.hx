@@ -34,8 +34,6 @@ class Note extends FlxSprite
 
 	public var noteCharterObject:FlxSprite;
 
-	public var noteYOff:Int = 0;
-
 	public var isFreezeNote:Bool = false;
 
 	public static var swagWidth:Float = 160 * 0.7;
@@ -191,19 +189,11 @@ class Note extends FlxSprite
 			localAngle += arrowAngles[noteData];
 			originColor = col;
 		}
-		
-		// we make sure its downscroll and its a SUSTAIN NOTE (aka a trail, not a note)
-		// and flip it so it doesn't look weird.
-		// THIS DOESN'T FUCKING FLIP THE NOTE, CONTRIBUTERS DON'T JUST COMMENT THIS OUT JESUS
-		// then what is this lol
-		if (((PlayState.loadRep && PlayState.rep.replay.isDownscroll) || (!PlayState.loadRep && FlxG.save.data.downscroll)) && sustainNote) 
-			flipY = true;
-
-		var stepHeight = (0.45 * Conductor.stepCrochet * FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? PlayState.SONG.speed : PlayStateChangeables.scrollSpeed, 2));
 
 		if (isSustainNote && prevNote != null)
 		{
 			alpha = 0.6;
+			if (FlxG.save.data.downscroll) flipY = true;
 
 			x += width / 2;
 
@@ -220,13 +210,12 @@ class Note extends FlxSprite
 			if (prevNote.isSustainNote)
 			{
 				prevNote.animation.play(dataColor[prevNote.originColor] + 'hold');
-				prevNote.updateHitbox();
 
-				prevNote.scale.y *= (stepHeight + 1) / prevNote.height; // + 1 so that there's no odd gaps as the notes scroll
+				if(FlxG.save.data.scrollSpeed != 1)
+					prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.5 * FlxG.save.data.scrollSpeed;
+				else
+					prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.5 * PlayState.SONG.speed;
 				prevNote.updateHitbox();
-				prevNote.noteYOff = Math.round(-prevNote.offset.y);
-
-				noteYOff = Math.round(offset.y * (flipY ? 1 : -1));
 			}
 		}
 	}
