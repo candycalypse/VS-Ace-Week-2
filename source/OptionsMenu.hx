@@ -84,12 +84,12 @@ class OptionsMenu extends MusicBeatState
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
 		menuBG.updateHitbox();
 		menuBG.screenCenter();
-		menuBG.antialiasing = true;
+		menuBG.antialiasing = FlxG.save.data.antialiasing;
 		add(menuBG);
 
 		black = new FlxSprite(0).loadGraphic(Paths.image('blackFade'));
 		black.setGraphicSize(Std.int(black.width * 1.1));
-		black.antialiasing = true;
+		black.antialiasing = FlxG.save.data.antialiasing;
 		black.scrollFactor.set();
 		black.updateHitbox();
 		add(black);

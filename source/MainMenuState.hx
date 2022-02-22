@@ -58,8 +58,7 @@ class MainMenuState extends MusicBeatState
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
 		bg.updateHitbox();
 		bg.screenCenter();
-		if(FlxG.save.data.antialiasing)
-			bg.antialiasing = true;
+		bg.antialiasing = FlxG.save.data.antialiasing;
 		add(bg);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
@@ -72,8 +71,7 @@ class MainMenuState extends MusicBeatState
 		magenta.updateHitbox();
 		magenta.screenCenter();
 		magenta.visible = false;
-		if(FlxG.save.data.antialiasing)
-			magenta.antialiasing = true;
+		magenta.antialiasing = FlxG.save.data.antialiasing;
 		magenta.color = 0xFFb4edf1;
 		add(magenta);
 
@@ -83,8 +81,7 @@ class MainMenuState extends MusicBeatState
 		black.setGraphicSize(Std.int(black.width * 1.1));
 		black.updateHitbox();
 		//black.screenCenter();
-		if(FlxG.save.data.antialiasing)
-			black.antialiasing = true;
+		black.antialiasing = FlxG.save.data.antialiasing;
 		add(black);
 		if (firstStart) {
 			FlxTween.tween(black,{x: -100}, 1.4, {ease: FlxEase.expoInOut});
@@ -95,8 +92,7 @@ class MainMenuState extends MusicBeatState
 		var icon = new HealthIcon("ace", true);
 		icon.x = FlxG.width * 1.1;
 		icon.y = FlxG.height * 0.8;
-		if(FlxG.save.data.antialiasing)
-			icon.antialiasing = true;
+		icon.antialiasing = FlxG.save.data.antialiasing;
 		icon.updateHitbox();
 		add(icon);
 		if (firstStart) {
@@ -121,8 +117,7 @@ class MainMenuState extends MusicBeatState
 			//menuItem.screenCenter(X);
 			menuItems.add(menuItem);
 			menuItem.scrollFactor.set();
-			if(FlxG.save.data.antialiasing)
-				menuItem.antialiasing = true;
+			menuItem.antialiasing = FlxG.save.data.antialiasing;
 			if (firstStart) {
 				FlxTween.tween(menuItem,{x: 30 + (i * 45)}, 1.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
 					{ 

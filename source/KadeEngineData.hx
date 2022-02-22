@@ -28,7 +28,7 @@ class KadeEngineData
 			FlxG.save.data.scoreText = true;
 
 		if (FlxG.save.data.antialiasing == null)
-			FlxG.save.data.antialiasing = true;
+			FlxG.save.data.antialiasing = FlxG.save.data.antialiasing;
 
 		if (FlxG.save.data.missSounds == null)
 			FlxG.save.data.missSounds = true;

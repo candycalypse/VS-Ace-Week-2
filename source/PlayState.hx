@@ -666,8 +666,7 @@ class PlayState extends MusicBeatState
 						bg.loadGraphic(Paths.image('Background2', 'week-ace'));
 					else
 						bg.loadGraphic(Paths.image('Background1', 'week-ace'));
-					if (FlxG.save.data.antialiasing)
-						bg.antialiasing = true;
+					bg.antialiasing = FlxG.save.data.antialiasing;
 					bg.scrollFactor.set(1, 1);
 					bg.active = false;
 					bg.screenCenter();
@@ -677,8 +676,7 @@ class PlayState extends MusicBeatState
 					backChars = new FlxSprite(0, 0);
 					backChars.frames = Paths.getSparrowAtlas('Back Characters', 'week-ace');
 					backChars.animation.addByPrefix('bop', 'bop', 24, false);
-					if (FlxG.save.data.antialiasing)
-						backChars.antialiasing = true;
+					backChars.antialiasing = FlxG.save.data.antialiasing;
 					backChars.scrollFactor.set(1, 1);
 					backChars.screenCenter();
 					backChars.x -= 30;
@@ -686,8 +684,7 @@ class PlayState extends MusicBeatState
 					add(backChars);
 
 					var fences:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('Fences', 'week-ace'));
-					if (FlxG.save.data.antialiasing)
-						fences.antialiasing = true;
+					fences.antialiasing = FlxG.save.data.antialiasing;
 					fences.scrollFactor.set(1, 1);
 					fences.active = false;
 					fences.screenCenter();
@@ -709,8 +706,7 @@ class PlayState extends MusicBeatState
 							snowLayer1 = new FlxSprite(0, 0).loadGraphic(Paths.image('P1Snow1', 'week-ace'));
 					}
 
-					if (FlxG.save.data.antialiasing)
-						snowLayer1.antialiasing = true;
+					snowLayer1.antialiasing = FlxG.save.data.antialiasing;
 					snowLayer1.scrollFactor.set(1, 1);
 					snowLayer1.active = false;
 					snowLayer1.screenCenter();
@@ -720,8 +716,7 @@ class PlayState extends MusicBeatState
 					frontChars = new FlxSprite(0, 0);
 					frontChars.frames = Paths.getSparrowAtlas('Front Characters', 'week-ace');
 					frontChars.animation.addByPrefix('bop', 'bop', 24, false);
-					if (FlxG.save.data.antialiasing)
-						frontChars.antialiasing = true;
+					frontChars.antialiasing = FlxG.save.data.antialiasing;
 					frontChars.scrollFactor.set(1, 1);
 					frontChars.screenCenter();
 					frontChars.x -= 55;
@@ -742,8 +737,7 @@ class PlayState extends MusicBeatState
 						default:
 							snowLayer2 = new FlxSprite(0, 0).loadGraphic(Paths.image('P1Snow2', 'week-ace'));
 					}
-					if (FlxG.save.data.antialiasing)
-						snowLayer2.antialiasing = true;
+					snowLayer2.antialiasing = FlxG.save.data.antialiasing;
 					snowLayer2.scrollFactor.set(1, 1);
 					snowLayer2.active = false;
 					snowLayer2.screenCenter();
@@ -751,8 +745,7 @@ class PlayState extends MusicBeatState
 					add(snowLayer2);
 
 					var lamps:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('Lamps', 'week-ace'));
-					if (FlxG.save.data.antialiasing)
-						lamps.antialiasing = true;
+					lamps.antialiasing = FlxG.save.data.antialiasing;
 					lamps.scrollFactor.set(1, 1);
 					lamps.active = false;
 					lamps.screenCenter();
@@ -800,8 +793,7 @@ class PlayState extends MusicBeatState
 						Cameos = new FlxSprite(0, 0);
 						Cameos.frames = Paths.getSparrowAtlas('AceCrowd', 'week-ace');
 						Cameos.animation.addByPrefix('jam', 'jam', 24, false);
-						if (FlxG.save.data.antialiasing)
-							Cameos.antialiasing = true;
+						Cameos.antialiasing = FlxG.save.data.antialiasing;
 						Cameos.scrollFactor.set(0.9, 0.9);
 						Cameos.screenCenter();
 						Cameos.x -= -100;
@@ -849,8 +841,7 @@ class PlayState extends MusicBeatState
 						Cameos = new FlxSprite(0, 0);
 						Cameos.frames = Paths.getSparrowAtlas('AceCrowd', 'week-ace');
 						Cameos.animation.addByPrefix('jam', 'jam', 24, false);
-						if (FlxG.save.data.antialiasing)
-							Cameos.antialiasing = true;
+						Cameos.antialiasing = FlxG.save.data.antialiasing;
 						Cameos.scrollFactor.set(0.9, 0.9);
 						Cameos.screenCenter();
 						Cameos.x -= -100;
@@ -878,8 +869,7 @@ class PlayState extends MusicBeatState
 						graf = new FlxSprite(-1550, -1595);
 						graf.frames = Paths.getSparrowAtlas('wallart', 'week-ace'); // i put it in week-ace for testing purposes
 						graf.animation.addByPrefix('vibe', 'vibe', 24, false);
-						if (FlxG.save.data.antialiasing)
-							graf.antialiasing = true;
+						graf.antialiasing = FlxG.save.data.antialiasing;
 						graf.scrollFactor.set(0.9, 0.9);
 						add(graf);
 		
@@ -1047,8 +1037,7 @@ class PlayState extends MusicBeatState
 				if (SONG.song == 'Sub-Zero' || SONG.song == 'Frostbite')
 				{
 					var snowLayer3 = new FlxSprite(0, 0).loadGraphic(Paths.image('P3Snow3', 'week-ace'));
-					if (FlxG.save.data.antialiasing)
-						snowLayer3.antialiasing = true;
+					snowLayer3.antialiasing = FlxG.save.data.antialiasing;
 					snowLayer3.scrollFactor.set(1, 1);
 					snowLayer3.active = false;
 					snowLayer3.screenCenter();
@@ -1060,8 +1049,7 @@ class PlayState extends MusicBeatState
 						snowDarken.alpha = 0;
 					else
 						snowDarken.alpha = 0.5;
-					if (FlxG.save.data.antialiasing)
-						snowDarken.antialiasing = true;
+					snowDarken.antialiasing = FlxG.save.data.antialiasing;
 					snowDarken.scrollFactor.set(1, 1);
 					snowDarken.active = false;
 					snowDarken.screenCenter();
@@ -1072,7 +1060,7 @@ class PlayState extends MusicBeatState
 				var overlay:FlxSprite = new FlxSprite(-1450, -900).loadGraphic(Paths.image('Overlay', 'week-ace'));
 				overlay.scale.set(0.75, 0.75);
 				if (FlxG.save.data.antialiasing)
-					overlay.antialiasing = true;
+					overlay.antialiasing = FlxG.save.data.antialiasing;
 				overlay.scrollFactor.set(1, 1);
 				overlay.active = false;
 				add(overlay);
@@ -2177,8 +2165,8 @@ class PlayState extends MusicBeatState
 
 			if (FlxG.save.data.antialiasing)
 			{
-				babyArrow.antialiasing = true;
-				breakAnim.antialiasing = true;
+				babyArrow.antialiasing = FlxG.save.data.antialiasing;
+				breakAnim.antialiasing = FlxG.save.data.antialiasing;
 			}
 
 			babyArrow.updateHitbox();
@@ -3723,10 +3711,10 @@ class PlayState extends MusicBeatState
 
 			rating.setGraphicSize(Std.int(rating.width * 0.7));
 			if (FlxG.save.data.antialiasing)
-				rating.antialiasing = true;
+				rating.antialiasing = FlxG.save.data.antialiasing;
 			comboSpr.setGraphicSize(Std.int(comboSpr.width * 0.7));
 			if (FlxG.save.data.antialiasing)
-				comboSpr.antialiasing = true;
+				comboSpr.antialiasing = FlxG.save.data.antialiasing;
 
 			currentTimingShown.updateHitbox();
 			comboSpr.updateHitbox();
@@ -3765,7 +3753,7 @@ class PlayState extends MusicBeatState
 				numScore.cameras = [camHUD];
 
 				if (FlxG.save.data.antialiasing)
-					numScore.antialiasing = true;
+					numScore.antialiasing = FlxG.save.data.antialiasing;
 				numScore.setGraphicSize(Std.int(numScore.width * 0.5));
 				numScore.updateHitbox();
 

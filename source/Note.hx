@@ -119,8 +119,7 @@ class Note extends FlxSprite
 
 			setGraphicSize(Std.int(width * 0.7));
 			updateHitbox();
-			if(FlxG.save.data.antialiasing)
-				antialiasing = true;
+			antialiasing = FlxG.save.data.antialiasing;
 		}
 		else
 		{			
@@ -164,8 +163,7 @@ class Note extends FlxSprite
 				updateHitbox();
 			}
 			
-			if(FlxG.save.data.antialiasing)
-				antialiasing = true;
+			antialiasing = FlxG.save.data.antialiasing;
 		}
 
 		x += swagWidth * noteData;
