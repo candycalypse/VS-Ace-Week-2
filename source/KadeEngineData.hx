@@ -61,8 +61,8 @@ class KadeEngineData
 		if (FlxG.save.data.fpsCap > 285 || FlxG.save.data.fpsCap < 60)
 			FlxG.save.data.fpsCap = 120; // baby proof so you can't hard lock ur copy of kade engine
 		
-		if (FlxG.save.data.scrollSpeed == null)
-			FlxG.save.data.scrollSpeed = 1;
+		/*if (FlxG.save.data.scrollSpeed == null)
+			FlxG.save.data.scrollSpeed = 1;*/ // TODO: fix this bullshit
 
 		if (FlxG.save.data.npsDisplay == null)
 			FlxG.save.data.npsDisplay = false;

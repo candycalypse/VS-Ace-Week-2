@@ -128,18 +128,17 @@ class GraphicLoading extends Option
 	{
 		FlxG.save.data.cacheImages = !FlxG.save.data.cacheImages;
 
-		if (FlxG.save.data.cacheImages && Caching.bitmapData.get('gf') == null)
-			FlxG.switchState(new Caching());
-		
+		if (FlxG.save.data.cacheImages && !FileCache.instance.cachedGraphics.exists('shared_notesDefault'))
+			FlxG.switchState(new DisclaimerState()); // error annoying so i put this here
+
 		display = updateDisplay();
 		return true;
 	}
 
 	private override function updateDisplay():String
 	{
-		return  FlxG.save.data.cacheImages ? "Preload Characters" : "Do not Preload Characters";
+		return FlxG.save.data.cacheImages ? "Preload Characters" : "Do not Preload Characters";
 	}
-
 }
 
 class DownscrollOption extends Option
@@ -654,7 +653,7 @@ class FPSCapOption extends Option
 }
 
 
-class ScrollSpeedOption extends Option
+/*class ScrollSpeedOption extends Option
 {
 	public function new(desc:String)
 	{
@@ -699,7 +698,7 @@ class ScrollSpeedOption extends Option
 
 		return true;
 	}
-}
+}*/ // TODO: fix this bullshit
 
 
 class RainbowFPSOption extends Option

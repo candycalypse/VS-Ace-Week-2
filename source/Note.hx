@@ -30,7 +30,6 @@ class Note extends FlxSprite
 	public var sustainLength:Float = 0;
 	public var isSustainNote:Bool = false;
 	public var originColor:Int = 0; // The sustain note's original note's color
-	public var spawnStep:Int = 0;
 
 	public var noteCharterObject:FlxSprite;
 
@@ -42,6 +41,9 @@ class Note extends FlxSprite
 	public static var BLUE_NOTE:Int = 1;
 	public static var RED_NOTE:Int = 3;
 
+	public var offsetX:Float = 0;
+	public var offsetY:Float = 0; // used in nothing for now
+
 	public var rating:String = "shit";
 
 	public var modAngle:Float = 0; // The angle set by modcharts
@@ -52,12 +54,12 @@ class Note extends FlxSprite
 	public var quantityColor:Array<Int> = [RED_NOTE, 2, BLUE_NOTE, 2, PURP_NOTE, 2, BLUE_NOTE, 2];
 	public var arrowAngles:Array<Int> = [180, 90, 270, 0];
 
-	public var isParent:Bool = false;
-	public var parent:Note = null;
-	public var spotInLine:Int = 0;
-	public var sustainActive:Bool = true;
+	//public var isParent:Bool = false;
+	//public var parent:Note = null;
+	//public var spotInLine:Int = 0;
+	public var sussy:Bool = true;
 
-	public var children:Array<Note> = [];
+	//public var children:Array<Note> = [];
 
 	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inCharter:Bool = false, ?frozenNote:Bool = false)
 	{
@@ -195,17 +197,17 @@ class Note extends FlxSprite
 			alpha = 0.6;
 			if (FlxG.save.data.downscroll) flipY = true;
 
-			x += width / 2;
+			offsetX += width / 2;
 
 			originColor = prevNote.originColor; 
 
 			animation.play(dataColor[originColor] + 'holdend'); // This works both for normal colors and quantization colors
 			updateHitbox();
 
-			x -= width / 2;
+			offsetX -= width / 2;
 
 			if (inCharter)
-				x += 30;
+				offsetX += 30;
 
 			if (prevNote.isSustainNote)
 			{
@@ -214,20 +216,17 @@ class Note extends FlxSprite
 				if(FlxG.save.data.scrollSpeed != 1)
 					prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.5 * FlxG.save.data.scrollSpeed;
 				else
-					prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.5 * PlayState.SONG.speed;
+					prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.5 * PlayState.instance.songSpeed;
 				prevNote.updateHitbox();
 			}
 		}
+		x += offsetX;
 	}
 
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		angle = modAngle + localAngle;
-
-		if (!modifiedByLua)
-			if (!sustainActive)
-				alpha = 0.3;
 
 		if (mustPress)
 		{

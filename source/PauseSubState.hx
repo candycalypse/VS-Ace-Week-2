@@ -269,7 +269,7 @@ class PauseSubState extends MusicBeatSubstate
 					if(PlayState.loadRep)
 					{
 						FlxG.save.data.botplay = false;
-						FlxG.save.data.scrollSpeed = 1;
+						//FlxG.save.data.scrollSpeed = 1; // TODO: fix this bullshit
 					}
 					PlayState.loadRep = false;
 					#if windows

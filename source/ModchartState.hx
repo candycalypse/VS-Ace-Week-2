@@ -350,7 +350,7 @@ class ModchartState
 
 		setVar("difficulty", PlayState.storyDifficulty);
 		setVar("bpm", Conductor.bpm);
-		setVar("scrollspeed", FlxG.save.data.scrollSpeed != 1 ? FlxG.save.data.scrollSpeed : PlayState.SONG.speed);
+		//setVar("scrollspeed", FlxG.save.data.scrollSpeed != 1 ? FlxG.save.data.scrollSpeed : PlayState.instance.songSpeed); // TODO: fix this bullshit
 		setVar("fpsCap", FlxG.save.data.fpsCap);
 		setVar("downscroll", FlxG.save.data.downscroll);
 		setVar("flashing", FlxG.save.data.flashing);

@@ -33,7 +33,7 @@ class OptionsMenu extends MusicBeatState
 			new Judgement("Customize your Hit Timings. (LEFT or RIGHT)"),
 			new FPSCapOption("Change your FPS Cap."),
 			new ScoreTextOption("Change if you want your score to be shown under your health bar."),
-			new ScrollSpeedOption("Change your scroll speed. (1 = Chart dependent)"),
+			//new ScrollSpeedOption("Change your scroll speed. (1 = Chart dependent)"), // TODO: fix this bullshit
 			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Milisecond Based)"),
 			new ResetButtonOption("Toggle pressing R to gameover."),
 			new CustomizeGameplay("Drag and drop gameplay modules to your prefered positions!")

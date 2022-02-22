@@ -95,7 +95,7 @@ class Replay
 			"timestamp": Date.now(),
 			"replayGameVer": version,
 			"sf": Conductor.safeFrames,
-			"noteSpeed": (FlxG.save.data.scrollSpeed > 1 ? FlxG.save.data.scrollSpeed : PlayState.SONG.speed),
+			//"noteSpeed": (FlxG.save.data.scrollSpeed > 1 ? FlxG.save.data.scrollSpeed : PlayState.instance.songSpeed), // TODO: fix this bullshit
 			"isDownscroll": FlxG.save.data.downscroll,
 			"songNotes": notearray,
 			"songJudgements": judge,

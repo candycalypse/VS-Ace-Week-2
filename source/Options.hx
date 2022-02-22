@@ -655,7 +655,7 @@ class FPSCapOption extends Option
 }
 
 
-class ScrollSpeedOption extends Option
+/*class ScrollSpeedOption extends Option
 {
 	public function new(desc:String)
 	{
@@ -700,7 +700,7 @@ class ScrollSpeedOption extends Option
 
 		return true;
 	}
-}
+}*/ // TODO: fix this bullshit
 
 
 class RainbowFPSOption extends Option
@@ -1006,7 +1006,7 @@ class ResetSettings extends Option
 		FlxG.save.data.changedHit = null;
 		FlxG.save.data.fpsRain = null;
 		FlxG.save.data.fpsCap = null;
-		FlxG.save.data.scrollSpeed = null;
+		//FlxG.save.data.scrollSpeed = null; // TODO: fix this bullshit
 		FlxG.save.data.npsDisplay = null;
 		FlxG.save.data.frames = null;
 		FlxG.save.data.accuracyMod = null;

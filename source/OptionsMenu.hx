@@ -36,7 +36,7 @@ class OptionsMenu extends MusicBeatState
 			#if desktop
 			new FPSCapOption("Change the highest amount of FPS you can have."),
 			#end
-			new ScrollSpeedOption("Edit your scroll speed value."),
+			//new ScrollSpeedOption("Edit your scroll speed value."), // TODO: fix this bullshit
 			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Millisecond Based)"),
 			new ResetButtonOption("Toggle pressing R to instantly die."),
 			new CustomizeGameplay("Drag around the ratings to your liking.")
