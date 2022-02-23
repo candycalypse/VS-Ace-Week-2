@@ -71,13 +71,14 @@ class Option
 
 
 
-class DFJKOption extends Option
+class KeybindsOption extends Option
 {
 	private var controls:Controls;
 
-	public function new(controls:Controls)
+	public function new(controls:Controls, desc:String)
 	{
 		super();
+		description = desc;
 		this.controls = controls;
 	}
 

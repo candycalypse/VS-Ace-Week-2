@@ -2117,12 +2117,7 @@ class PlayState extends MusicBeatState
 		if (curSong == 'Sub-Zero')
 		{
 			slowDown = true;
-			songSpeedTween = FlxTween.tween(this, {songSpeed: 1.65}, 0.2, {ease: FlxEase.linear, onComplete:
-				function (twn:FlxTween)
-				{
-					songSpeedTween = null;
-				}
-			});
+			changeSpeed(SONG.speed * 0.66);
 		}
 
 		generatedMusic = true;
@@ -4253,21 +4248,11 @@ class PlayState extends MusicBeatState
 
 		if (curSong == 'Frostbite') {
 			if (curStep == 1760) {
-				songSpeedTween = FlxTween.tween(this, {songSpeed: 1.5}, 0.2, {ease: FlxEase.linear, onComplete:
-					function (twn:FlxTween)
-					{
-						songSpeedTween = null;
-					}
-				});
+				changeSpeed(SONG.speed * 0.5);
 			}
 
 			if (curStep == 2005) {
-				songSpeedTween = FlxTween.tween(this, {songSpeed: 3}, 0.2, {ease: FlxEase.linear, onComplete:
-					function (twn:FlxTween)
-					{
-						songSpeedTween = null;
-					}
-				});
+				changeSpeed(SONG.speed * 1);
 			}
 		}
 
@@ -4277,12 +4262,7 @@ class PlayState extends MusicBeatState
 			if (slowDown && curStep >= 254)
 			{
 				slowDown = false;
-				songSpeedTween = FlxTween.tween(this, {songSpeed: 2.5}, 0.2, {ease: FlxEase.linear, onComplete:
-					function (twn:FlxTween)
-					{
-						songSpeedTween = null;
-					}
-				});
+				changeSpeed(SONG.speed * 1);
 
 				if (!PlayStateChangeables.Optimize)
 				{

@@ -133,16 +133,14 @@ class MainMenuState extends MusicBeatState
 		icon.angle = -4;
 
 		new FlxTimer().start(0.01, function(tmr:FlxTimer)
-			{
-				if(icon.angle == -4) 
-					FlxTween.angle(icon, icon.angle, 4, 4, {ease: FlxEase.quartInOut});
-				if (icon.angle == 4) 
-					FlxTween.angle(icon, icon.angle, -4, 4, {ease: FlxEase.quartInOut});
-			}, 0);
+		{
+			if (icon.angle == -4) 
+				FlxTween.angle(icon, icon.angle, 4, 4, {ease: FlxEase.quartInOut});
+			if (icon.angle == 4) 
+				FlxTween.angle(icon, icon.angle, -4, 4, {ease: FlxEase.quartInOut});
+		}, 0);
 
 		firstStart = false;
-
-		
 
 		FlxG.camera.follow(camFollow, null, 0.60 * (60 / FlxG.save.data.fpsCap));
 

@@ -26,7 +26,7 @@ class OptionsMenu extends MusicBeatState
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
 			new IceNotesOption("Toggle ice notes on certain songs. Turn off for classic gameplay."),
-			new DFJKOption(controls),
+			new KeybindsOption(controls, "Customize your keybinds here."),
 			new DownscrollOption("Put your lane in the center or on the right."),
 			/*new MiddlescrollOption("Toggle making the notes scroll down rather than up. (FREEPLAY ONLY)"),*/
 			new GhostTapOption("Toggle counting pressing a directional input when no arrow is there as a miss."),

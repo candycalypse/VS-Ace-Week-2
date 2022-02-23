@@ -27,7 +27,7 @@ class OptionsMenu extends MusicBeatState
 
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
-			new DFJKOption(controls),
+			new KeybindsOption(controls, "Customize your keybinds here."),
 			new DownscrollOption("Change if the arrows come from the bottom or the top."),
 			new IceNotesOption("Toggle ice notes on certain songs. Turn off for classic gameplay."),
 			/*new MiddlescrollOption("Put your lane in the center or on the right. (FREEPLAY ONLY)"),*/
@@ -69,10 +69,12 @@ class OptionsMenu extends MusicBeatState
 
 	private var currentDescription:String = "";
 	private var grpControls:FlxTypedGroup<Alphabet>;
-	public static var descriptionText:FlxText;
+
+	public static var descText:FlxText;
+	public static var descBox:AttachedSprite;
+	var offsetThing:Float = -75;
 
 	var currentSelectedCat:OptionCategory;
-	var blackBorder:FlxSprite;
 	var black:FlxSprite;
 
 	override function create()
@@ -94,10 +96,6 @@ class OptionsMenu extends MusicBeatState
 		black.updateHitbox();
 		add(black);
 
-		blackBorder = new FlxSprite(FlxG.width - 560, 10).makeGraphic(110, 100, FlxColor.BLACK);
-		blackBorder.alpha = 0.5;
-		add(blackBorder);
-
 		grpControls = new FlxTypedGroup<Alphabet>();
 		add(grpControls);
 
@@ -111,12 +109,23 @@ class OptionsMenu extends MusicBeatState
 
 		currentDescription = "none";
 
-		descriptionText = new FlxText(FlxG.width - 460, 10, 450, currentDescription, 12);
-		descriptionText.setFormat("VCR OSD Mono", 24, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		descriptionText.borderSize = 2;
-		descriptionText.scrollFactor.set();
+		descBox = new AttachedSprite();
+		descBox.makeGraphic(1, 1, FlxColor.BLACK);
+		descBox.xAdd = -10;
+		descBox.yAdd = -10;
+		descBox.alphaMult = 0.6;
+		descBox.alpha = 0.6;
+		descBox.copyAlpha = false;
+		add(descBox);
 
-		//FlxTween.tween(descriptionText,{y: FlxG.height - 18},2,{ease: FlxEase.elasticInOut});
+		descText = new FlxText(50, FlxG.height + offsetThing - 25, 1180, currentDescription, 32);
+		descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER /*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
+		descText.scrollFactor.set();
+		// descText.borderSize = 2.4;
+		descBox.sprTracker = descText;
+		add(descText);
+
+		//FlxTween.tween(descText,{y: FlxG.height - 18},2,{ease: FlxEase.elasticInOut});
 		//FlxTween.tween(blackBorder,{y: FlxG.height - 18},2, {ease: FlxEase.elasticInOut});
 
 		super.create();
@@ -137,7 +146,7 @@ class OptionsMenu extends MusicBeatState
 			else if (controls.BACK)
 			{
 				isCat = false;
-				descriptionText.text = "Please select a category.";
+				descText.text = "Please select a category.";
 				grpControls.clear();
 				for (i in 0...options.length)
 				{
@@ -208,12 +217,12 @@ class OptionsMenu extends MusicBeatState
 					else if (FlxG.keys.pressed.LEFT)
 						FlxG.save.data.offset -= 0.1;
 					
-					descriptionText.text = currentDescription;
+					descText.text = currentDescription;
 				}
 				if (currentSelectedCat.getOptions()[curSelected].getAccept())
-					descriptionText.text = currentDescription;
+					descText.text = currentDescription;
 				else
-					descriptionText.text = currentDescription;
+					descText.text = currentDescription;
 			}
 			else
 			{
@@ -229,7 +238,7 @@ class OptionsMenu extends MusicBeatState
 				else if (FlxG.keys.pressed.LEFT)
 					FlxG.save.data.offset -= 0.1;
 				
-				descriptionText.text = currentDescription;
+				descText.text = currentDescription;
 			}
 		
 
@@ -250,7 +259,7 @@ class OptionsMenu extends MusicBeatState
 					currentSelectedCat = options[curSelected];
 					isCat = true;
 					grpControls.clear();
-					add(descriptionText);
+					add(descText);
 					for (i in 0...currentSelectedCat.getOptions().length)
 					{
 						var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, currentSelectedCat.getOptions()[i].getDisplay(), true, false);
@@ -270,6 +279,7 @@ class OptionsMenu extends MusicBeatState
 
 	var isSettingControl:Bool = false;
 
+	var moveTween:FlxTween = null;
 	function changeSelection(change:Int = 0)
 	{
 		#if !switch
@@ -292,12 +302,12 @@ class OptionsMenu extends MusicBeatState
 		if (isCat)
 		{
 			if (currentSelectedCat.getOptions()[curSelected].getAccept())
-				descriptionText.text =  currentSelectedCat.getOptions()[curSelected].getValue() + " - Description - " + currentDescription;
+				descText.text =  currentSelectedCat.getOptions()[curSelected].getValue() + " - Description - " + currentDescription;
 			else
-				descriptionText.text = currentDescription;
+				descText.text = currentDescription;
 		}
 		else
-			descriptionText.text = currentDescription;
+			descText.text = currentDescription;
 		// selector.y = (70 * curSelected) + 30;
 
 		var bullShit:Int = 0;
@@ -316,5 +326,13 @@ class OptionsMenu extends MusicBeatState
 				// item.setGraphicSize(Std.int(item.width));
 			}
 		}
+
+		descText.y = FlxG.height - descText.height + offsetThing - 60;
+
+		if (moveTween != null) moveTween.cancel();
+		moveTween = FlxTween.tween(descText, {y: descText.y + 75}, 0.25, {ease: FlxEase.sineOut});
+
+		descBox.setGraphicSize(Std.int(descText.width + 20), Std.int(descText.height + 25));
+		descBox.updateHitbox();
 	}
 }
