@@ -220,7 +220,7 @@ class OptionsMenu extends MusicBeatState
 					descText.text = currentDescription;
 				}
 				if (currentSelectedCat.getOptions()[curSelected].getAccept())
-					descText.text = currentDescription;
+					descText.text = currentSelectedCat.getOptions()[curSelected].getValue() + " - Description - " + currentDescription;
 				else
 					descText.text = currentDescription;
 			}
