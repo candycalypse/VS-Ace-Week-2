@@ -405,27 +405,6 @@ class MissSoundsOption extends Option
 	}
 }
 
-class HealthBarOption extends Option
-{
-	public function new(desc:String)
-	{
-		super();
-		description = desc;
-	}
-
-	public override function press():Bool
-	{
-		FlxG.save.data.healthBar = !FlxG.save.data.healthBar;
-		display = updateDisplay();
-		return true;
-	}
-
-	private override function updateDisplay():String
-	{
-		return "Health Bar Colors " + (!FlxG.save.data.healthBar ? "Disabled" : "Enabled");
-	}
-}
-
 
 class LaneUnderlayOption extends Option
 {
@@ -996,7 +975,6 @@ class ResetSettings extends Option
 		/*FlxG.save.data.middlescroll = null;*/
 		FlxG.save.data.laneUnderlay = null;
 		FlxG.save.data.laneTransparency = null;
-		FlxG.save.data.healthBar = null;
 		FlxG.save.data.scoreText = null;
 		FlxG.save.data.accuracyDisplay = null;
 		FlxG.save.data.offset = null;

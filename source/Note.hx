@@ -42,7 +42,14 @@ class Note extends FlxSprite
 	public static var RED_NOTE:Int = 3;
 
 	public var offsetX:Float = 0;
-	public var offsetY:Float = 0; // used in nothing for now
+	public var offsetY:Float = 0; // nevermind
+	public var offsetAngle:Float = 0;
+	public var multAlpha:Float = 1;
+
+	public var copyX:Bool = true;
+	public var copyY:Bool = true;
+	public var copyAngle:Bool = true;
+	public var copyAlpha:Bool = true;
 
 	public var rating:String = "shit";
 
@@ -193,9 +200,11 @@ class Note extends FlxSprite
 		if (isSustainNote && prevNote != null)
 		{
 			alpha = 0.6;
+			multAlpha = 0.6;
 			if (FlxG.save.data.downscroll) flipY = true;
 
 			offsetX += width / 2;
+			copyAngle = false;
 
 			originColor = prevNote.originColor; 
 

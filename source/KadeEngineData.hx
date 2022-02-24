@@ -21,9 +21,6 @@ class KadeEngineData
 		if (FlxG.save.data.laneTransparency == null)
 			FlxG.save.data.laneTransparency = 0;
 
-		if (FlxG.save.data.healthBar == null)
-			FlxG.save.data.healthBar = true;
-
 		if (FlxG.save.data.scoreText == null)
 			FlxG.save.data.scoreText = true;
 

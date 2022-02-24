@@ -2,6 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.util.FlxColor;
 import openfl.utils.Assets as OpenFlAssets;
 
 using StringTools;
@@ -77,4 +78,11 @@ class HealthIcon extends FlxSprite
 	{
 		return char;
 	}
+
+	public static function startColor(sprite:FlxSprite):FlxColor {
+		var color = FlxColor.fromInt(CoolUtil.dominantColor(sprite));
+
+		return FlxColor.fromRGB(color.red, color.green, color.blue);
+	} // couldn't get this to work
+	// maybe you skilled coders can
 }

@@ -43,7 +43,6 @@ class OptionsMenu extends MusicBeatState
 		]),
 		new OptionCategory("Appearance", [
 			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
-			new HealthBarOption("The color of the healthbar now fits with everyone's icons."),
 			new LaneUnderlayOption("Toggles if the notes have a black background behind them for visibility."),
 			new CamZoomOption("Toggle the camera zoom in-game."),
 			#if desktop
