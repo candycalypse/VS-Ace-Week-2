@@ -141,26 +141,26 @@ class DisclaimerState extends FlxState
                         }
                     }
             else if (disclaimer && !stopspamming)
-                {
-                    if(!fuckYouUpdateLoop)
-                        {
-                            FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
-                    selectSprite.x = 460;
-                    StoryMenuState.characterUnlocked[1] = true; 
-                    StoryMenuState.characterUnlocked[2] = true; 
-                    fuckYouUpdateLoop = true;
-                        }
+            {
+				if (!fuckYouUpdateLoop)
+				{
+					FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
+                    FlxTween.tween(selectSprite, {x: 460}, 0.25, {ease: FlxEase.sineInOut});
+					StoryMenuState.characterUnlocked[1] = true;
+					StoryMenuState.characterUnlocked[2] = true;
+					fuckYouUpdateLoop = true;
+				}
                 if ((FlxG.keys.justPressed.LEFT || PlayerSettings.player1.controls.LEFT_P) && selectSprite.x == 660) 
                 {
                     FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
-                    selectSprite.x = 460;
+                    FlxTween.tween(selectSprite, {x: 460}, 0.25, {ease: FlxEase.sineInOut});
                     StoryMenuState.characterUnlocked[1] = true; 
                     StoryMenuState.characterUnlocked[2] = true; 
                 }
                 else if ((FlxG.keys.justPressed.RIGHT || PlayerSettings.player1.controls.RIGHT_P) && selectSprite.x == 460)
                 {
                     FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
-                    selectSprite.x = 660;
+                    FlxTween.tween(selectSprite, {x: 660}, 0.25, {ease: FlxEase.sineInOut});
                     StoryMenuState.characterUnlocked[1] = false; 
                     StoryMenuState.characterUnlocked[2] = false; 
                 }

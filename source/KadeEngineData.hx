@@ -21,14 +21,11 @@ class KadeEngineData
 		if (FlxG.save.data.laneTransparency == null)
 			FlxG.save.data.laneTransparency = 0;
 
-		if (FlxG.save.data.healthBar == null)
-			FlxG.save.data.healthBar = true;
-
 		if (FlxG.save.data.scoreText == null)
 			FlxG.save.data.scoreText = true;
 
 		if (FlxG.save.data.antialiasing == null)
-			FlxG.save.data.antialiasing = true;
+			FlxG.save.data.antialiasing = FlxG.save.data.antialiasing;
 
 		if (FlxG.save.data.missSounds == null)
 			FlxG.save.data.missSounds = true;
@@ -61,8 +58,8 @@ class KadeEngineData
 		if (FlxG.save.data.fpsCap > 285 || FlxG.save.data.fpsCap < 60)
 			FlxG.save.data.fpsCap = 120; // baby proof so you can't hard lock ur copy of kade engine
 		
-		if (FlxG.save.data.scrollSpeed == null)
-			FlxG.save.data.scrollSpeed = 1;
+		/*if (FlxG.save.data.scrollSpeed == null)
+			FlxG.save.data.scrollSpeed = 1;*/ // TODO: fix this bullshit
 
 		if (FlxG.save.data.npsDisplay == null)
 			FlxG.save.data.npsDisplay = false;

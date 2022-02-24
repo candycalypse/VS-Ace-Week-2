@@ -26,14 +26,14 @@ class OptionsMenu extends MusicBeatState
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
 			new IceNotesOption("Toggle ice notes on certain songs. Turn off for classic gameplay."),
-			new DFJKOption(controls),
+			new KeybindsOption(controls, "Customize your keybinds here."),
 			new DownscrollOption("Put your lane in the center or on the right."),
 			/*new MiddlescrollOption("Toggle making the notes scroll down rather than up. (FREEPLAY ONLY)"),*/
 			new GhostTapOption("Toggle counting pressing a directional input when no arrow is there as a miss."),
 			new Judgement("Customize your Hit Timings. (LEFT or RIGHT)"),
 			new FPSCapOption("Change your FPS Cap."),
 			new ScoreTextOption("Change if you want your score to be shown under your health bar."),
-			new ScrollSpeedOption("Change your scroll speed. (1 = Chart dependent)"),
+			//new ScrollSpeedOption("Change your scroll speed. (1 = Chart dependent)"), // TODO: fix this bullshit
 			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Milisecond Based)"),
 			new ResetButtonOption("Toggle pressing R to gameover."),
 			new CustomizeGameplay("Drag and drop gameplay modules to your prefered positions!")
@@ -91,8 +91,7 @@ class OptionsMenu extends MusicBeatState
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
 		menuBG.updateHitbox();
 		menuBG.screenCenter();
-		if(FlxG.save.data.antialiasing)
-			menuBG.antialiasing = true;
+		menuBG.antialiasing = FlxG.save.data.antialiasing;
 		add(menuBG);
 
 		grpControls = new FlxTypedGroup<Alphabet>();

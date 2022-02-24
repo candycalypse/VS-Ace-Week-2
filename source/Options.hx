@@ -71,13 +71,14 @@ class Option
 
 
 
-class DFJKOption extends Option
+class KeybindsOption extends Option
 {
 	private var controls:Controls;
 
-	public function new(controls:Controls)
+	public function new(controls:Controls, desc:String)
 	{
 		super();
+		description = desc;
 		this.controls = controls;
 	}
 
@@ -406,28 +407,6 @@ class MissSoundsOption extends Option
 	}
 }
 
-class HealthBarOption extends Option
-{
-	public function new(desc:String)
-	{
-		super();
-		description = desc;
-	}
-
-	public override function press():Bool
-	{
-		FlxG.save.data.healthBar = !FlxG.save.data.healthBar;
-		display = updateDisplay();
-		return true;
-	}
-
-	private override function updateDisplay():String
-	{
-		return "Health Bar Colors " + (!FlxG.save.data.healthBar ? "Disabled" : "Enabled");
-	}
-}
-
-
 class LaneUnderlayOption extends Option
 {
 	public function new(desc:String)
@@ -655,7 +634,7 @@ class FPSCapOption extends Option
 }
 
 
-class ScrollSpeedOption extends Option
+/*class ScrollSpeedOption extends Option
 {
 	public function new(desc:String)
 	{
@@ -700,7 +679,7 @@ class ScrollSpeedOption extends Option
 
 		return true;
 	}
-}
+}*/ // TODO: fix this bullshit
 
 
 class RainbowFPSOption extends Option
@@ -997,7 +976,6 @@ class ResetSettings extends Option
 		/*FlxG.save.data.middlescroll = null;*/
 		FlxG.save.data.laneUnderlay = null;
 		FlxG.save.data.laneTransparency = null;
-		FlxG.save.data.healthBar = null;
 		FlxG.save.data.scoreText = null;
 		FlxG.save.data.accuracyDisplay = null;
 		FlxG.save.data.offset = null;
@@ -1006,7 +984,7 @@ class ResetSettings extends Option
 		FlxG.save.data.changedHit = null;
 		FlxG.save.data.fpsRain = null;
 		FlxG.save.data.fpsCap = null;
-		FlxG.save.data.scrollSpeed = null;
+		//FlxG.save.data.scrollSpeed = null; // TODO: fix this bullshit
 		FlxG.save.data.npsDisplay = null;
 		FlxG.save.data.frames = null;
 		FlxG.save.data.accuracyMod = null;

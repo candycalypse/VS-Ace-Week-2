@@ -237,7 +237,7 @@ class DialogueBox extends FlxSpriteGroup
 		portraitSaku.animation.addByPrefix('Enraged', 'Enraged', 24, false);
 		portraitSaku.animation.addByPrefix('Thinking', 'Thinking', 24, false);
 		portraitSaku.animation.addByPrefix('Booba', 'Booba', 24, false);
-		portraitSaku.antialiasing = true;
+		portraitSaku.antialiasing = FlxG.save.data.antialiasing;
 
 		portraitSaku.scrollFactor.set();
 		portraitSaku.animation.play('Neutral', true);

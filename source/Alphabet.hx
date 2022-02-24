@@ -226,8 +226,7 @@ class AlphaCharacter extends FlxSprite
 	{
 		super(x, y);
 		frames = Paths.getSparrowAtlas('alphabet');
-		if(FlxG.save.data.antialiasing)
-			antialiasing = true;
+		antialiasing = FlxG.save.data.antialiasing;
 	}
 
 	public function createBold(letter:String)

@@ -117,6 +117,13 @@ class Paths
 		return 'assets/fonts/$key';
 	}
 
+	inline static public function fileExists(key:String, type:AssetType, ?library:String) {
+		if (OpenFlAssets.exists(Paths.getPath(key, type, library))) {
+			return true;
+		}
+		return false;
+	}
+
 	inline static public function video(key:String, ?library:String)
 	{
 		return getPath('videos/$key.webm', IMAGE, library);
